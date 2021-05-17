@@ -1,3 +1,17 @@
+# Temas puntuales de la sección
+
++ Estructura y diseño de nuestra aplicación de Calendario
++ Uso de componentes de terceros
++ Modals
++ Configuración de Redux
++ CRUD local
++ Preparación de pantallas para futuras secciones
++ Uso de MomentJS
++ Manejo de fechas
++ Conexión de nuestro Backend con el Frontend
++ Eventos del calendario + backend
++ Despliegues a producción
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
