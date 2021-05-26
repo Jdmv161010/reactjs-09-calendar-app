@@ -6,9 +6,9 @@ import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { uiCloseModal } from "../../redux-logic/actions/ui";
 import {
-  eventAddNew,
   eventClearActive,
-  eventUpdate,
+  eventStartAddNew,
+  eventStartUpdate,
 } from "../../redux-logic/actions/event";
 
 const customStyles = {
@@ -105,20 +105,10 @@ export const CalendarModal = () => {
     //TODO: Grabar en BD
 
     if (activeEvent) {
-      dispatch(eventUpdate(formValues));
+      dispatch(eventStartUpdate(formValues));
     } else {
-      dispatch(
-        eventAddNew({
-          ...formValues,
-          id: new Date().getTime(),
-          user: {
-            _id: "123",
-            name: "Juan",
-          },
-        })
-      );
+      dispatch(eventStartAddNew(formValues));
     }
-    console.log(formValues);
     setTitleValid(true);
     closeModal();
   };
@@ -161,9 +151,8 @@ export const CalendarModal = () => {
           <label>Titulo y notas</label>
           <input
             type="text"
-            className={`form-control ${
-              !titleValid ? "is-invalid" : "is-valid"
-            }`}
+            className={`form-control ${!titleValid ? "is-invalid" : "is-valid"
+              }`}
             placeholder="Título del evento"
             autoComplete="off"
             name="title"
