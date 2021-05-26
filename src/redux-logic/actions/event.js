@@ -75,7 +75,7 @@ export const eventStartDelete = () => {
       const body = await resp.json();
 
       if(body.ok){
-        dispatch(eventDelete(event));
+        dispatch(eventDelete());
       } else {
         Swal.fire("Error", body.msg, "error");
       }
